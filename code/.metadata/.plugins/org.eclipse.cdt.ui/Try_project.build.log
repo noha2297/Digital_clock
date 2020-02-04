@@ -1,0 +1,38 @@
+23:41:11 **** Incremental Build of configuration Debug for project Try_project ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'main':
+../main.c:91: warning: unused variable 'count'
+Finished building: ../main.c
+ 
+Building target: Try_project.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Try_project.map -mmcu=atmega16 -o "Try_project.elf"  ./main.o   
+Finished building target: Try_project.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Try_project.elf  >"Try_project.lss"
+Finished building: Try_project.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Try_project.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    4986 bytes (30.4% Full)
+(.text + .data + .bootloader)
+
+Data:         11 bytes (1.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+23:41:12 Build Finished (took 834ms)
+
